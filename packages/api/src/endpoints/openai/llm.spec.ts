@@ -259,7 +259,7 @@ describe('getOpenAILLMConfig', () => {
     });
 
     it('should NOT exclude parameters for gpt-5.x versioned models (they support sampling params)', () => {
-      const versionedModels = ['gpt-5.1', 'gpt-5.1-turbo', 'gpt-5.2', 'gpt-5.5-preview'];
+      const versionedModels = ['gpt-5.1', 'gpt-5.1-turbo', 'gpt-5.2', 'gpt-5.5'];
 
       versionedModels.forEach((model) => {
         const result = getOpenAILLMConfig({

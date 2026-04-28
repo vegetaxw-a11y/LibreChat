@@ -131,6 +131,9 @@ export const tokenValues: Record<string, { prompt: number; completion: number }>
     'gpt-5.4': { prompt: 2.5, completion: 15 },
     // TODO: gpt-5.4-pro pricing not yet officially published — verify before release
     'gpt-5.4-pro': { prompt: 5, completion: 30 },
+    // TODO: gpt-5.5 pricing not yet officially published — verify before release
+    'gpt-5.5': { prompt: 5, completion: 30 },
+    'gpt-5.5-pro': { prompt: 30, completion: 180 },
     'gpt-5-nano': { prompt: 0.05, completion: 0.4 },
     'gpt-5-mini': { prompt: 0.25, completion: 2 },
     'gpt-5-pro': { prompt: 15, completion: 120 },
@@ -301,6 +304,7 @@ export const cacheTokenValues: Record<string, { write: number; read: number }> =
   'gpt-5.2': { write: 1.75, read: 0.175 },
   'gpt-5.3': { write: 1.75, read: 0.175 },
   'gpt-5.4': { write: 2.5, read: 0.25 },
+  'gpt-5.5': { write: 3, read: 0.3 },
   'gpt-5-mini': { write: 0.25, read: 0.025 },
   'gpt-5-nano': { write: 0.05, read: 0.005 },
   o1: { write: 15, read: 7.5 },
