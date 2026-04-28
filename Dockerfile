@@ -41,10 +41,15 @@ RUN \
 
 COPY --chown=node:node . .
 
+# Ensure node user can write build output/temp files
+USER root
+RUN chown -R node:node /app/packages /app/client /app/api && chmod -R u+rwX /app/packages /app/client /app/api
+USER node
+
 RUN \
     # React client build with configurable memory
-    NODE_OPTIONS="--max-old-space-size=${NODE_MAX_OLD_SPACE_SIZE}" npm run frontend; \
-    npm prune --production; \
+    NODE_OPTIONS="--max-old-space-size=${NODE_MAX_OLD_SPACE_SIZE}" npm run frontend && \
+    npm prune --production && \
     npm cache clean --force
 
 # Node API setup
